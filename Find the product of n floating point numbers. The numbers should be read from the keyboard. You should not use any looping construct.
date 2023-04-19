@@ -1,0 +1,24 @@
+#include <stdio.h>
+// Function to calculate product of n floating-point numbers using recursion
+double productOfNNumbers(int n) {
+    // Base case: if n is 0, return 1 (terminating condition)
+    if (n == 0) {
+        return 1.0;
+    } else {
+        double num;
+        printf("Enter number #%d: ", n);
+        scanf("%lf", &num);
+        // Recursive call to calculate product of remaining n-1 numbers
+        return num * productOfNNumbers(n - 1);
+    }
+}
+int main() {
+    int n; // Number of floating-point numbers
+    printf("Enter the number of floating-point numbers: ");
+    scanf("%d", &n);
+
+    // Call the recursive function to calculate product of n numbers
+    double result = productOfNNumbers(n);
+    printf("Product of %d numbers: %.2lf\n", n, result);
+    return 0;
+}
